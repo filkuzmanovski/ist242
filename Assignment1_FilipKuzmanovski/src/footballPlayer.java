@@ -1,14 +1,18 @@
-import java.util.*;
-class footballPlayer {
-    
-    // Player Attributes
+
+import java.util.Random;
+
+
+
+/**
+ * @author Filip Kuzmanovski
+ */
+public class footballPlayer {
+     // Player Attributes
     private String firstName;
     private String lastName;
     private int age;
     private String position;
     private int weight;
-   
-    
     
     // Constructor
     footballPlayer(String pl_firstName, String pl_lastName, int pl_age, String pl_position, int pl_weight) {
@@ -18,20 +22,32 @@ class footballPlayer {
         position = pl_position;
         weight = pl_weight;
     }
-   
-    // Method for displaying rushing yards
-     public void rushYards() {
-        Random rushRand;
-        rushRand = new Random();
-        int n;
-        n = rushRand.nextInt(100);
+    
+    // footballPlayer method
+    footballPlayer() {
+        this.firstName = "";
+        this.lastName = "";
+        this.age = 0;
+        this.position = "";
+        this.weight = 0;
     }
     
-    // Method for displaying player info
-    @Override
-    public String toString() {
-       return String.format("Player Name: %s %s \nAge: %d years old \nPosition: %s \nWeight: %d lbs \n", getFirstName(), getLastName(), getAge(), getPosition(), getWeight());
-   }
+    // Print info on player and their stats
+    void playerAttr() {
+        System.out.println("First Name: " + getFirstName());
+        System.out.println("Last Name: " + getLastName());
+        System.out.println("Player Age: " + getAge());
+        System.out.println("Player Position: " + getPosition());
+        System.out.println("Player Weight: " + getWeight());
+        System.out.println("Player's Rushing Yards: " + rushingYard());
+    }
+    
+    // Method for displaying random rushing yards
+    int rushingYard() {
+        Random rushVal = new Random(); 
+        int val = rushVal.nextInt(100);
+        return val;  
+    }
 
     /**
      * @return the firstName

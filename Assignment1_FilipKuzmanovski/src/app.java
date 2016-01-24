@@ -1,8 +1,10 @@
 
-import java.util.ArrayList;
-
+import java.util.*;
+/**
+ * @author Filip Kuzmanovski
+ */
 public class app {
-    public static void main(String[] args){
+   public static void main(String[] args){
         
         // Declaring Array list of Football Players
         ArrayList<footballPlayer> player = new ArrayList<>();
@@ -20,13 +22,18 @@ public class app {
         player.add(new footballPlayer("Clay", "Matthews", 29, "LB", 260));
         
         // Creating a team with the above players
-        footballTeam team = new footballTeam("NFL Elite", "Bald Eagle", player);
+        footballTeam team = new footballTeam("NFL Elite", "Bald Eagle", player); 
         
-        // Display information on players and team
-        System.out.println(team);
+        // User prompt for position desired
+        System.out.print("Enter a position that you want information for: ");
+        Scanner scnr = new Scanner(System.in);
+        String positionDesired = scnr.nextLine();
         
-        //Call random method
-        footballPlayer.rushRand;
-    }
-    
+        // Dot notation for displaying information on player
+        team.playerInfo(positionDesired);
+        System.out.println("");
+        
+        // Dot notation for displaying team information
+        team.teamInfo();
+}
 }
