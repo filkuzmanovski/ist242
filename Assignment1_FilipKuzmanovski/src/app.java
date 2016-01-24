@@ -33,7 +33,7 @@ public class app {
         team.playerInfo(positionDesired);
         System.out.println("");
         
-        // Dot notation for displaying team information
-        team.teamInfo();
+       // Dot notation for displaying team information
+       int instantYards = team.getInstantYards();
 }
 }

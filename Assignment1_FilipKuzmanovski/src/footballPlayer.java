@@ -44,8 +44,9 @@ public class footballPlayer {
     
     // Method for displaying random rushing yards
     int rushingYard() {
-        Random rushVal = new Random(); 
-        int val = rushVal.nextInt(100);
+        int val = 0;
+        double rushVal = Math.random(); 
+         val = (int) (rushVal * 100.0)+ 1;
         return val;  
     }
 
