@@ -20,10 +20,10 @@ public class footballTeam {
     }
     
     // Displaying Team Info
-    void teamInfo() {
+       void teamInfo() {
         System.out.println("Team Name: " + getTeamName());
         System.out.println("Team Mascot: " + getMascot());
-        System.out.println("Instant Rushing Yards: " + getInstantYards());
+        System.out.println("Instant Rushing Yards: " + instantYards());
         System.out.println("");
         
         for (int i = 0; i < getPlayer().size(); i++) {
@@ -37,13 +37,13 @@ public class footballTeam {
         int yardsTotal = 0;
         for (int i = 0; i < getPlayer().size(); i++) {
             yardsTotal += getPlayer().get(i).rushingYard();
-            setInstantYards(yardsTotal);
+            instantYards = yardsTotal;
         }
-        return getInstantYards();
+        return instantYards;
     }
     
     //Player information method Based on search by position
-    void playerInfo(String searchPosition) {
+     String playerInfo(String searchPosition) {
         footballPlayer searchPlayer = new footballPlayer();
         boolean validPlayer = false;
         
@@ -59,6 +59,7 @@ public class footballTeam {
         if (!validPlayer) {
             System.out.println("You entered an invalid position");
         }
+        return searchPosition;
     }
 
     /**
@@ -89,12 +90,7 @@ public class footballTeam {
         this.mascot = mascot;
     }
 
-    /**
-     * @return the instantYards
-     */
-    public int getInstantYards() {
-        return instantYards;
-    }
+    
 
     /**
      * @param instantYards the instantYards to set

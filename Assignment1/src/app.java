@@ -29,11 +29,11 @@ public class app {
         Scanner scnr = new Scanner(System.in);
         String positionDesired = scnr.nextLine();
         
-        // Dot notation for displaying information on player
+        // Dot notation for displaying information on player including Rush Yards
         team.playerInfo(positionDesired);
         System.out.println("");
         
-       // Dot notation for displaying team information
-       int instantYards = team.getInstantYards();
-}
+        // Displaying Team Info with Summary of Rush Yards
+         team.teamInfo();        
+    }
 }
